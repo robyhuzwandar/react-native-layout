@@ -1,1 +1,2 @@
+Baru nyoba 
 - npm install

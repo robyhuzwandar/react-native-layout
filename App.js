@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Alert } from "react-native";
+import { StyleSheet, Text, View, Button, Alert, Image } from "react-native";
 
 export default class App extends React.Component {
 
@@ -8,9 +8,7 @@ export default class App extends React.Component {
     const handlePress = () => {
       Alert.alert("You tapped the button!");
     }
-    return (
-      
-      <View style={styles.container}>
+    return <View style={styles.container}>
         {/* <Button
           containerStyle={{ padding: 10, height: 45, overflow: 'hidden', borderRadius: 4, backgroundColor: 'white' }}
           title="Add"
@@ -18,15 +16,16 @@ export default class App extends React.Component {
           onPress={handlePress}
           accessibilityLabel="Learn more about this purple button"
         /> */}
-        
-        <View style={{ height: 150, backgroundColor: 'silver', marginBottom:15, flexDirection: 'row'}}>
-          <View style={{ width: 150, backgroundColor: 'black', }}>
 
-          </View>
+        <View style={{ height: 150, backgroundColor: "silver", marginBottom: 15, padding:10}}>
+            <Image style={{ width: 125, height: 130, alignItems:'flex-end' }} source={{ uri: "https://facebook.github.io/react-native/docs/assets/favicon.png" }} />
         </View>
-        <View style={{ height: 150, backgroundColor: 'silver' }} />
-      </View>
-    );
+        
+        <View style={{ height: 150, backgroundColor: "silver", marginBottom: 15, padding:10}}>
+            <Image style={{ width: 125, height: 130, alignItems:'flex-end' }} source={{ uri: "https://facebook.github.io/react-native/docs/assets/favicon.png" }} />
+        </View>
+
+      </View>;
   }
 }
 

@@ -2,27 +2,34 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, Alert, Image } from "react-native";
 
 export default class App extends React.Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      titleText: "Bird's Nest",
+      bodyText: 'This is not a bird nest This is not really a bird nest This is not really a bird nest This is not really a bird nest.'
+    };
+  }
   
   render() {
     const handlePress = () => {
       Alert.alert("You tapped the button!");
     }
     return <View style={styles.container}>
-        {/* <Button
-          containerStyle={{ padding: 10, height: 45, overflow: 'hidden', borderRadius: 4, backgroundColor: 'white' }}
-          title="Add"
-          color="#841584"
-          onPress={handlePress}
-          accessibilityLabel="Learn more about this purple button"
-        /> */}
+        <Text style={styles.dateText} > {Date()} </Text>
+        <Text style={styles.titleText} > {this.state.titleText} </Text>
 
-        <View style={{ height: 150, backgroundColor: "silver", marginBottom: 15, padding:10}}>
-            <Image style={{ width: 125, height: 130, alignItems:'flex-end' }} source={{ uri: "https://facebook.github.io/react-native/docs/assets/favicon.png" }} />
+        <View style={{ height: 150, backgroundColor: "silver", marginBottom: 15, flexDirection:'row' , padding:10}}>
+            <Text style={{flex:7}}>
+                {this.state.bodyText}
+            </Text>
+            <Image style={{ width: 125, height: 130, alignItems:'flex-end', flex:5 }} source={{ uri: "https://facebook.github.io/react-native/docs/assets/favicon.png" }} />
         </View>
-        
-        <View style={{ height: 150, backgroundColor: "silver", marginBottom: 15, padding:10}}>
-            <Image style={{ width: 125, height: 130, alignItems:'flex-end' }} source={{ uri: "https://facebook.github.io/react-native/docs/assets/favicon.png" }} />
+
+       <View style={{ height: 150, backgroundColor: "silver", marginBottom: 15, flexDirection:'row' , padding:10}}>
+            <Text style={{flex:7}}>
+                {this.state.bodyText}
+            </Text>
+            <Image style={{ width: 125, height: 130, alignItems:'flex-end', flex:5 }} source={{ uri: "https://facebook.github.io/react-native/docs/assets/favicon.png" }} />
         </View>
 
       </View>;
@@ -38,5 +45,10 @@ const styles = StyleSheet.create({
     paddingTop: 15
     // justifyContent: 'center',
     // alignItems: 'stretch',
+  },
+
+  titleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
   },
 });
